@@ -1,0 +1,20 @@
+footer {
+  height: 5vh;
+  border: $boderFino;
+  border-top-color: map-get($colors, blancoCincuentaTransparencia);
+
+  flex-wrap: wrap !important;
+  div {
+    section {
+      p {
+        font-size: 0.75rem;
+        margin: 0;
+      }
+    }
+    div {
+      ul {
+        padding-left: 0;
+      }
+    }
+  }
+}

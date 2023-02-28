@@ -1,0 +1,14 @@
+//---- CAJA PRINCIPAL CONTENEDORA ----//
+@mixin caja_principal {
+    background-color: map-get($colors, negroTreintaTransparencia);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem map-get($colors, negroCincuentaTransparencia);
+
+    border-radius: 1rem;
+    border: $boderGrueso;
+    border-top-color: map-get($colors, blancoCincuentaTransparencia);
+    border-left-color: map-get($colors, blancoCincuentaTransparencia);
+    border-bottom-color: map-get($colors, blancoDiezTransparencia);
+    border-right-color: map-get($colors, blancoDiezTransparencia);
+}

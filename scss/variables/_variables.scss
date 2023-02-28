@@ -1,0 +1,21 @@
+//---- BORDER ----//
+$borderGrosor: (
+    fino: 1px,
+    grueso: 2px,
+);
+$borderFormato: solid;
+$borderTipo: transparent;
+
+$boderFino: map-get($borderGrosor, fino) $borderFormato $borderTipo;
+$boderGrueso: map-get($borderGrosor, grueso) $borderFormato $borderTipo;
+
+//---- COLORS ----//
+$colors: (
+    blanco: #fff,
+    blancoDiezTransparencia: rgba(225,225,225,0.1),
+    blancoCincuentaTransparencia: rgba(225,225,225,0.5),
+    negroDiezTransparencia: rgba(0, 0, 0, 0.1),
+    negroTreintaTransparencia: rgba(0, 0, 0, 0.3),
+    negroCincuentaTransparencia: rgba(0, 0, 0, 0.5),
+    negro: rgb(0, 0, 0),
+);

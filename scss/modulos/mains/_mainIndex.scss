@@ -1,0 +1,46 @@
+main {
+  height: 80vh;
+  div {
+    padding: 0;
+    margin: 0;
+    section {
+      text-shadow: 0.5rem 0.5rem 0.5rem
+        map-get($colors, negroCincuentaTransparencia);
+    }
+    div {
+      div {
+        p {
+          margin: 0;
+        }
+      }
+      div {
+        ol {
+          padding-top: 1rem;
+        }
+      }
+      div {
+        ul {
+          padding: 0;
+          margin: 0;
+          li {
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
+
+            .list-group-item {
+              background-color: rgba(0, 0, 0, 0);
+              color: white;
+            }
+            .list-group-item-action {
+              text-align: center;
+              &:hover {
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
