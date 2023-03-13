@@ -13,32 +13,30 @@ body header {
   position: relative !important;
   z-index: 2; }
 
-body main {
-  height: 80vh; }
-  body main div {
-    padding: 0;
-    margin: 0; }
-    body main div section {
-      text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5); }
-    body main div div div p {
-      margin: 0; }
-    body main div div div ol {
-      padding-top: 1rem; }
-    body main div div div ul {
-      padding: 0;
-      margin: 0; }
-      body main div div div ul li {
-        margin-bottom: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5); }
-        body main div div div ul li .list-group-item {
-          background-color: rgba(0, 0, 0, 0);
-          color: white; }
-        body main div div div ul li .list-group-item-action {
-          text-align: center; }
-          body main div div div ul li .list-group-item-action:hover {
-            background-color: white;
-            color: black !important; }
+body main div #home {
+  height: 100vh; }
+  body main div #home #homeTitulo {
+    padding: 10rem 0 0 10rem; }
+
+body main div #sobre {
+  height: 100vh; }
+  body main div #sobre #sobreTitulo {
+    padding-top: 2rem; }
+  body main div #sobre #sobreTexto {
+    padding: 0 2rem 0 2rem; }
+
+body main div #modulos {
+  padding-top: 2rem; }
+
+body main div #presupuestar {
+  height: 75vh;
+  padding-top: 2rem; }
+  body main div #presupuestar #presupuestarResultados {
+    padding-top: 2rem; }
+
+body main div #contacto {
+  height: 25vh;
+  padding-top: 2rem; }
 
 body footer {
   height: 5vh;

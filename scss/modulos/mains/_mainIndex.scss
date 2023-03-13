@@ -1,46 +1,34 @@
 main {
-  height: 80vh;
   div {
-    padding: 0;
-    margin: 0;
-    section {
-      text-shadow: 0.5rem 0.5rem 0.5rem
-        map-get($colors, negroCincuentaTransparencia);
+    #home {
+      height: 100vh;
+      #homeTitulo {
+        padding: 10rem 0 0 10rem;
+      }
     }
-    div {
-      div {
-        p {
-          margin: 0;
-        }
+    #sobre {
+      height: 100vh;
+      #sobreTitulo {
+        padding-top: 2rem;
       }
-      div {
-        ol {
-          padding-top: 1rem;
-        }
+      #sobreTexto {
+        padding: 0 2rem 0 2rem;
       }
-      div {
-        ul {
-          padding: 0;
-          margin: 0;
-          li {
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
+    }
+    #modulos {
+      padding-top: 2rem;
+    }
+    #presupuestar {
+      height: 75vh;
+      padding-top: 2rem;
+      #presupuestarResultados {
+        padding-top: 2rem;
+      }
+    }
+    #contacto {
+      height: 25vh;
+      padding-top: 2rem;
 
-            .list-group-item {
-              background-color: rgba(0, 0, 0, 0);
-              color: white;
-            }
-            .list-group-item-action {
-              text-align: center;
-              &:hover {
-                background-color: rgb(255, 255, 255);
-                color: rgb(0, 0, 0) !important;
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
