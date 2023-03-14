@@ -25,11 +25,31 @@ body main div #sobre {
   body main div #sobre #sobreTexto {
     padding: 0 2rem 0 2rem; }
 
-body main div #modulos {
-  padding-top: 2rem; }
+body main div #seccionModulos {
+  padding: 2rem 0 0 0; }
+  body main div #seccionModulos #modulosTitulo {
+    width: 100vw; }
+  body main div #seccionModulos #modulosLista {
+    padding: 0 2rem 2rem 2rem;
+    height: 100%;
+    width: 100%; }
+    body main div #seccionModulos #modulosLista ul {
+      height: 100%;
+      width: 100%;
+      padding: 0; }
+      body main div #seccionModulos #modulosLista ul li {
+        max-width: 400px;
+        padding: 0.5rem;
+        margin: 1rem; }
+        body main div #seccionModulos #modulosLista ul li div img {
+          margin-right: 0.5rem; }
+        body main div #seccionModulos #modulosLista ul li div div p {
+          font-size: 0.75rem !important; }
+        body main div #seccionModulos #modulosLista ul li div div label {
+          font-size: 0.75rem !important; }
 
 body main div #presupuestar {
-  height: 75vh;
+  height: 50vh;
   padding-top: 2rem; }
   body main div #presupuestar #presupuestarResultados {
     padding-top: 2rem; }

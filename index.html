@@ -39,110 +39,165 @@
                     </section>
                 </div>
                 <!-- MODULOS Y PRESUPUESTAR -->
-                <div id="modulos" class="bg-dark d-flex flex-column justify-content-start align-items-center">
-                        <p class="text-light display-6 fw-bold">MODULOS</p>
-                        <p class="text-light">SELECCION LOS MODULOS EN LOS QUE ESTA INTERESADO PARA SU VIVIENDA MODULDAR</p>
-                        <div class="row row-cols-1 row-cols-md-6 g-4">
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">COCINA Y TOILETE</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div id="seccionModulos" class="bg-dark d-flex flex-column justify-content-start align-items-center text-light">
+                    <div id="modulosTilulo" class="d-flex flex-column justify-content-center align-items-center">
+                        <p class="display-6 fw-bold">MODULOS</p>
+                        <p>SELECCION LOS MODULOS EN LOS QUE ESTA INTERESADO PARA SU VIVIENDA MODULDAR</p>
+                    </div>
+                    <div id="modulosLista">
+                        <ul class="d-flex flex-row flex-wrap justify-content-center align-items-stretch">
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/modulos/cocina.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">COCINA Y TOILETE</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" role="switch" id="CocinaToilete">
-                                        <label class="form-check-label" for="Cocina">Encargar</label></li>
+                                        <label class="form-check-label" for="CocinaToilete">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col"> 
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">DESPENSA Y LAVADERO</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/vivienda.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">DESPENSA Y LAVADERO</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" role="switch" id="DespensaLavadero">
-                                        <label class="form-check-label" for="Despensa">Encargar</label></li>
+                                        <label class="form-check-label" for="DespensaLavadero">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">COCHERA</h5>
-                                      <p class="card-text">Espacio de guardado para 1 vehiculo</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="Cochera">
-                                      <label class="form-check-label" for="Cochera">Encargar</label></li> 
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/modulos/garaje.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">COCHERA</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="Cochera">
+                                        <label class="form-check-label" for="Cochera">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">ESTAR</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="Estar">
-                                      <label class="form-check-label" for="Estar">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/modulos/sala-de-estar.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">ESTAR</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="Estar">
+                                        <label class="form-check-label" for="Estar">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">COMEDOR</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="Comedor">
-                                      <label class="form-check-label" for="Comedor">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/modulos/mesa-del-comedor.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">COMEDOR</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="Comedor">
+                                        <label class="form-check-label" for="Comedor">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/modulos/modulo_habitacion_principal.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">HABITACION PRINCIPAL</h5>
-                                      <p class="card-text">Compuesta por una cama doble, mesitas de luz a ambos lados y un placard</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="HabitacionPrincipal">
-                                      <label class="form-check-label" for="HabitacionPrincipal">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/vivienda.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">HABITACION PRINCIPAL</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="HabitacionPrincipal">
+                                        <label class="form-check-label" for="HabitacionPrincipal">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/modulos/modulo_baño_principal.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">BAÑO EN SUITE</h5>
-                                      <p class="card-text">Un baño completo con bañera unido directamente con la habitacion principal</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="BanioPrincipal">
-                                      <label class="form-check-label" for="BanioPrincipal">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/modulos/bano-publico.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">BAÑO COMPLETO EN SUITE</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="BanioCompletoEnSuite">
+                                        <label class="form-check-label" for="BanioCompletoEnSuite">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/modulos/habitacion_secundaria.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">HABITACION SIMPLE</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="HabitacionSecundaria">
-                                      <label class="form-check-label" for="HabitacionSecundaria">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/vivienda.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">HABITACION SIMPLE</p>
+                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="HabitacionSimple">
+                                        <label class="form-check-label" for="HabitacionSimple">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="./assets/images/Axonometrica.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">BAÑO COMPLETO</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <input class="form-check-input" type="checkbox" role="switch" id="BanioSecundario">
-                                      <label class="form-check-label" for="BanioSecundario">Encargar</label></li>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/vivienda.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">BAÑO COMPLETO</p>
+                                        <p class="fs-6">MODULO DE SERVICIO CON EL EQUIPAMIENTO COMPLETO PARA UN BAÑO CON TODOS EL EQUIPAMIENTO</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="BanioCompleto">
+                                        <label class="form-check-label" for="BanioCompleto">Encargar</label>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="d-flex flex-row">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/icons/vivienda.png" height="64px" width="64px" alt="...">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <p class="fw-bold fs-6">ESTUDIO</p>
+                                        <p class="fs-6">MODULO PARA TU PROPIO AREA DE TRABAJO CON ESPACIO PARA 2 PERSONAS</p>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="Estudio">
+                                        <label class="form-check-label" for="Estudio">Encargar</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div id="presupuestar" class="bg-light d-flex flex-column">
                     <section class="d-flex flex-column justify-content-center align-items-center">

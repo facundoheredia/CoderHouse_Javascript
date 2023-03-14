@@ -15,11 +15,44 @@ main {
         padding: 0 2rem 0 2rem;
       }
     }
-    #modulos {
-      padding-top: 2rem;
+    #seccionModulos {
+      padding: 2rem 0 0 0;
+      #modulosTitulo {
+        width: 100vw;
+      }
+      #modulosLista {
+        padding: 0 2rem 2rem 2rem;
+        height: 100%;
+        width: 100%;
+        ul {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          li {
+            max-width: 400px;
+            padding: 0.5rem;
+            margin: 1rem;
+            div {
+              img {
+                margin-right: 0.5rem;
+              }
+            }
+            div {
+              div {
+                p {
+                  font-size: 0.75rem !important;
+                }
+                label {
+                  font-size: 0.75rem !important;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     #presupuestar {
-      height: 75vh;
+      height: 50vh;
       padding-top: 2rem;
       #presupuestarResultados {
         padding-top: 2rem;
@@ -28,7 +61,6 @@ main {
     #contacto {
       height: 25vh;
       padding-top: 2rem;
-
     }
   }
 }

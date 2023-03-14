@@ -16,7 +16,7 @@ import {Modulo,Vivienda} from "./clases.js";
 /// return          -> la funcion devuelve la vivienda con las id de los modulos seleccionados
 function verificarModulos() {
                     //ARMAR DE MANERA DINAMICA LA FORMACION DEL ARRAY TOMANDO LOS ID
-    const modulosVivienda = ["#CocinaToilete","#DespensaLavadero","#Cochera","#Estar","#Comedor","#HabitacionPrincipal","#BanioPrincipal","#HabitacionSecundaria","#BanioSecundario"];
+    const modulosVivienda = ["#CocinaToilete","#DespensaLavadero","#Cochera","#Estar","#Comedor","#HabitacionPrincipal","#BanioCompletoEnSuite","#HabitacionSimple","#BanioCompleto","#Estudio"];
     let espacio;
     const modulosPedidos = [];
 
@@ -75,19 +75,24 @@ function armadoVivienda (modulosPedidos) {
                     precio = 15000;
                     cantidad = 1;
                 break;
-            case "#BanioPrincipal":
-                    nombre = "Baño Principal";
+            case "#BanioCompletoEnSuite":
+                    nombre = "Baño Completo en suite";
                     precio = 20000;
                     cantidad = 1;
                 break;
-            case "#HabitacionSecundaria":
-                    nombre = "Habitacion Secundaria";
+            case "#HabitacionSimple":
+                    nombre = "Habitacion Simple";
                     precio = 10000;
                     cantidad = 1;
                 break;
-            case "#BanioSecundario":
-                    nombre = "Baño Secundario";
+            case "#BanioCompleto":
+                    nombre = "Baño Completo";
                     precio = 15000;
+                    cantidad = 1;
+                break;
+            case "#Estudio":
+                    nombre = "Estudio";
+                    precio = 5000;
                     cantidad = 1;
                 break;
             default:
@@ -124,15 +129,15 @@ function presupuestoFinal (viviendaArmada) {
 }
 
 // FUNCION MOSTRAR PRESUPUESTO
-///@brief Funcion que se encarga de mostar insertando en el DOM los datos de la vivienda presupuestada
+/// @brief Funcion que se encarga de mostar insertando en el DOM los datos de la vivienda presupuestada
 function mostrarPresupuesto (viviendaFinal) {
     const montoVivienda = document.querySelector("#montoVivienda");
     const cantidadModulos = document.querySelector("#cantidadModulos");
     const detalleModulos = document.querySelector("#detalleModulos");
 
     //DEJAR ASI O HACER UN ENVI
-    montoVivienda.innerText = ` ${viviendaFinal.presupuesto}`;
-    cantidadModulos.innerText = ` ${viviendaFinal.cantidadModulos}`;
+    montoVivienda.innerText =`${viviendaFinal.presupuesto}`;
+    cantidadModulos.innerText =`${viviendaFinal.cantidadModulos}`;
     //VERIFICAR ESTA SALIDA
     detalleModulos.innerText = viviendaFinal.modulos;
     console.log(`SE DETALLAN CADA UNO DE LOS MODULOS: ${viviendaFinal.modulos}`);
