@@ -146,9 +146,9 @@ function mostrarPresupuesto(viviendaFinal) {
   const cantidadModulos = document.querySelector("#cantidadModulos");
   const detalleModulos = document.querySelector("#detalleModulos");
 
+
   montoVivienda.innerText = `U$D ${viviendaFinal.presupuesto}`;
   cantidadModulos.innerText = `${viviendaFinal.cantidadModulos}`;
-
   for (const modulo of viviendaFinal.modulos) {
     detalleModulos.innerHTML += `<li> Modulo: ${modulo.nombre} - U$D ${modulo.precio} - Cantidad: ${modulo.cantidad} </li>`;
   }
@@ -163,8 +163,6 @@ function presupuestarVivienda() {
   const modulosPedidos = verificarModulos();
   const viviendaArmada = armadoVivienda(modulosPedidos);
   const viviendaFinal = presupuestoFinal(viviendaArmada);
-
-  console.log(viviendaFinal);
 
   mostrarPresupuesto(viviendaFinal);
 }
