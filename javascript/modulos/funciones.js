@@ -38,6 +38,7 @@ function verificarModulos() {
       modulosPedidos.push(modulosVivienda[i]);
     }
   }
+
   return modulosPedidos;
 }
 
@@ -146,7 +147,7 @@ function mostrarPresupuesto(viviendaFinal) {
   const cantidadModulos = document.querySelector("#cantidadModulos");
   const detalleModulos = document.querySelector("#detalleModulos");
 
-
+  //MOSTRAR MENSAJE EN DOM
   montoVivienda.innerText = `U$D ${viviendaFinal.presupuesto}`;
   cantidadModulos.innerText = `${viviendaFinal.cantidadModulos}`;
   for (const modulo of viviendaFinal.modulos) {
@@ -161,10 +162,15 @@ function mostrarPresupuesto(viviendaFinal) {
 /// viviendaArmada              -> array que guarda los datos finales de la vivienda completa
 function presupuestarVivienda() {
   const modulosPedidos = verificarModulos();
-  const viviendaArmada = armadoVivienda(modulosPedidos);
-  const viviendaFinal = presupuestoFinal(viviendaArmada);
 
-  mostrarPresupuesto(viviendaFinal);
+  if(modulosPedidos.length == 0) {
+    alert("AGREGA AL MENOS UN MODULOS");
+  } else {
+    const viviendaArmada = armadoVivienda(modulosPedidos);
+    const viviendaFinal = presupuestoFinal(viviendaArmada);
+  
+    mostrarPresupuesto(viviendaFinal);
+  }
 }
 
 //=======================================================================
