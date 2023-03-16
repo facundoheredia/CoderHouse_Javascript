@@ -14,7 +14,10 @@ body header {
   z-index: 2; }
 
 body main div #home {
-  height: 100vh; }
+  height: 100vh;
+  background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, #212529 60%), url("../../../assets/images/home/1.jpg");
+  background-size: cover;
+  background-position: center; }
   body main div #home #homeTitulo {
     padding: 10rem 0 0 10rem; }
 
@@ -24,6 +27,24 @@ body main div #sobre {
     padding-top: 2rem; }
   body main div #sobre #sobreTexto {
     padding: 0 2rem 0 2rem; }
+  body main div #sobre #sobreVentajas {
+    padding: 0 2rem 2rem 2rem;
+    height: 100%;
+    width: 100%; }
+    body main div #sobre #sobreVentajas ul {
+      height: 100%;
+      width: 100%;
+      padding: 0; }
+      body main div #sobre #sobreVentajas ul li {
+        max-width: 400px;
+        padding: 0.5rem;
+        margin: 1rem; }
+        body main div #sobre #sobreVentajas ul li div img {
+          margin-right: 0.5rem; }
+        body main div #sobre #sobreVentajas ul li div div p {
+          font-size: 0.75rem !important; }
+        body main div #sobre #sobreVentajas ul li div div label {
+          font-size: 0.75rem !important; }
 
 body main div #seccionModulos {
   padding: 2rem 0 0 0; }
@@ -56,6 +77,8 @@ body main div #presupuestar {
 body main div #contacto {
   height: 25vh;
   padding-top: 2rem; }
+  body main div #contacto #contactoDerechosAutor p {
+    font-size: 0.75rem !important; }
 
 body footer {
   height: 5vh;

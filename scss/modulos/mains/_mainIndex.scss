@@ -2,6 +2,9 @@ main {
   div {
     #home {
       height: 100vh;
+      background-image: linear-gradient(270deg, rgba(248,249,250,0) 30%, rgba(33,37,41,1) 60%), url("../../../assets/images/home/1.jpg");
+      background-size: cover;
+      background-position: center;
       #homeTitulo {
         padding: 10rem 0 0 10rem;
       }
@@ -13,6 +16,36 @@ main {
       }
       #sobreTexto {
         padding: 0 2rem 0 2rem;
+      }
+      #sobreVentajas {
+        padding: 0 2rem 2rem 2rem;
+        height: 100%;
+        width: 100%;
+        ul {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          li {
+            max-width: 400px;
+            padding: 0.5rem;
+            margin: 1rem;
+            div {
+              img {
+                margin-right: 0.5rem;
+              }
+            }
+            div {
+              div {
+                p {
+                  font-size: 0.75rem !important;
+                }
+                label {
+                  font-size: 0.75rem !important;
+                }
+              }
+            }
+          }
+        }
       }
     }
     #seccionModulos {
@@ -60,6 +93,11 @@ main {
     #contacto {
       height: 25vh;
       padding-top: 2rem;
+      #contactoDerechosAutor {
+        p {
+          font-size: 0.75rem !important;
+        }
+      }
     }
   }
 }

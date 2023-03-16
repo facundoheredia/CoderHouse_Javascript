@@ -142,16 +142,32 @@ function presupuestoFinal(viviendaArmada) {
 
 // FUNCION MOSTRAR PRESUPUESTO
 /// @brief Funcion que se encarga de mostar insertando en el DOM los datos de la vivienda presupuestada
+/// montoVivienda   -> inserta el monto final de la vivienda en el DOM
+/// cantidadModulos -> inserta la cantidad de modulos de la vivienda en el DOM
+/// detalleModulos  -> inserta el detalle de los modulos en la lista generada en el DOM
 function mostrarPresupuesto(viviendaFinal) {
   const montoVivienda = document.querySelector("#montoVivienda");
   const cantidadModulos = document.querySelector("#cantidadModulos");
   const detalleModulos = document.querySelector("#detalleModulos");
+  
+  if (detalleModulos.childElementCount != 0) {
+    borrarListaExistente ();
+  }
 
-  //MOSTRAR MENSAJE EN DOM
   montoVivienda.innerText = `U$D ${viviendaFinal.presupuesto}`;
   cantidadModulos.innerText = `${viviendaFinal.cantidadModulos}`;
   for (const modulo of viviendaFinal.modulos) {
-    detalleModulos.innerHTML += `<li> Modulo: ${modulo.nombre} - U$D ${modulo.precio} - Cantidad: ${modulo.cantidad} </li>`;
+    detalleModulos.innerHTML += `<li>${modulo.nombre} - U$D ${modulo.precio} - Cantidad: ${modulo.cantidad} </li>`;
+  }
+}
+
+// FUNCION BORRAR LISTA
+/// @brief Funcion que se encarga de borrar los nodos de la lista de detalle de modulos cuando se presupuesta
+function borrarListaExistente () {
+  let listaNodos = document.querySelector("#detalleModulos").querySelectorAll("li");
+  
+  for (let i=0; i < listaNodos.length; i++) {
+    listaNodos[i].remove();
   }
 }
 
@@ -163,12 +179,12 @@ function mostrarPresupuesto(viviendaFinal) {
 function presupuestarVivienda() {
   const modulosPedidos = verificarModulos();
 
-  if(modulosPedidos.length == 0) {
-    alert("AGREGA AL MENOS UN MODULOS");
+  if (modulosPedidos.length == 0) {
+    alert("PARA PRESUPUESTAR POR FAVOR AGREGA AL MENOS UN MODULO");
   } else {
     const viviendaArmada = armadoVivienda(modulosPedidos);
     const viviendaFinal = presupuestoFinal(viviendaArmada);
-  
+
     mostrarPresupuesto(viviendaFinal);
   }
 }
