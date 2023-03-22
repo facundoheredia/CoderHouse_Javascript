@@ -1,21 +1,84 @@
 main {
+  #menuLateral {
+    a {
+      z-index: 99;
+      position: fixed;
+      left: -80px;
+      transition: 0.3s;
+      padding: 15px;
+      width: 100px;
+      &:hover {
+        left: 0;
+      }
+    }
+    #anclaHome {
+      top: 2rem;
+      background-color: #04AA6D;
+    }
+    #anclaSobre {
+      top: 8rem;
+      background-color: #2195F3;
+    }
+    #anclaModulos {
+      top: 14rem;
+      background-color: #f44336;
+    }
+    #anclaContacto {
+      top: 20rem;
+      background-color: #555;
+    }
+}
   div {
-    #home {
+    #seccionHome {
       height: 100vh;
-      background-image: linear-gradient(270deg, rgba(248,249,250,0) 30%, rgba(33,37,41,1) 60%), url("../../../assets/images/home/1.jpg");
+      background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, rgba(33, 37, 41, 1) 60%), url("../../../assets/images/home/1.jpg");
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       #homeTitulo {
         padding: 10rem 0 0 10rem;
       }
+      #homeFrase {
+        padding: 5rem 0 0 10rem;
+        max-width: 30vw;
+        p {
+          font-style: italic;
+        }
+      }
+      // CLASES ICONO SCROLL
+      .scrolldown-wrapper {
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        bottom: 10%;
+        transform: translate(-50%, -50%);
+      }
+      .scrolldown {
+        border: 2px solid #ffffff;
+        border-radius: 30px;
+        height: 46px;
+        margin: 0 auto 8px;
+        text-align: center;
+        width: 30px;
+      }
+      .scrolldown-p1, .scrolldown-p2 {
+        animation-duration: 1.5s;
+        animation-name: scrolldown;
+        animation-iteration-count: infinite;
+        fill: #ffffff;
+      }
+      .scrolldown-p2 {
+        animation-delay: 0.75s;
+      }
+      // IMPORTAR ANIMACION DE ICONO SCROLL
+      @import "../../animaciones/animacionIconoScroll";
     }
-    #sobre {
-      height: 100vh;
+    #seccionSobre {
       #sobreTitulo {
         padding-top: 2rem;
       }
       #sobreTexto {
-        padding: 0 2rem 0 2rem;
+        padding: 2rem;
       }
       #sobreVentajas {
         padding: 0 2rem 2rem 2rem;
@@ -26,7 +89,7 @@ main {
           width: 100%;
           padding: 0;
           li {
-            max-width: 400px;
+            max-width: 300px;
             padding: 0.5rem;
             margin: 1rem;
             div {
@@ -37,16 +100,23 @@ main {
             div {
               div {
                 p {
-                  font-size: 0.75rem !important;
+                  font-size: 0.60rem !important;
                 }
                 label {
-                  font-size: 0.75rem !important;
+                  font-size: 0.70rem !important;
                 }
               }
             }
           }
         }
       }
+    }
+    #seccionImagen1 {
+      height: 50vh;
+      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
     #seccionModulos {
       padding: 2rem 0 0 0;
@@ -62,21 +132,21 @@ main {
           width: 100%;
           padding: 0;
           li {
-            max-width: 400px;
+            max-width: 300px;
             padding: 0.5rem;
             margin: 1rem;
             div {
               img {
-                margin-right: 0.5rem;
+                margin-right: 1rem;
               }
             }
             div {
               div {
                 p {
-                  font-size: 0.75rem !important;
+                  font-size: 0.60rem !important;
                 }
                 label {
-                  font-size: 0.75rem !important;
+                  font-size: 0.70rem !important;
                 }
               }
             }
@@ -84,20 +154,33 @@ main {
         }
       }
     }
-    #presupuestar {
+    #seccionPresupuestar {
       padding-top: 2rem;
       #presupuestarResultados {
         padding-top: 2rem;
       }
     }
-    #contacto {
-      height: 25vh;
+    #seccionImagen2 {
+      height: 50vh;
+      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    #seccionContacto {
       padding-top: 2rem;
       #contactoDerechosAutor {
         p {
           font-size: 0.75rem !important;
         }
       }
+    }
+    #seccionImagen3 {
+      height: 50vh;
+      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
   }
 }

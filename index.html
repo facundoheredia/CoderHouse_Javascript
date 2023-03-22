@@ -5,8 +5,8 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta author="Facundo Heredia" description="Entrega Final - Desarrollo web - CoderHouse - 2022 - Comision 33155"/>
-        <meta name="Keywords" content="Treking, Montañismo, Naturaleza"/>
+        <meta author="Facundo Heredia" description="Entrega Final - javascript - CoderHouse - 2022 - Comision 39465"/>
+        <meta name="Keywords" content="arquitectura, modular, vivienda"/>
         <!-- ICONO DEL SITIO -->
         <link rel="shortcut icon" href="./assets/icons/logo_wb_icon.ico" type="image/x-icon">
         <!-- HOJA DE ESTILO BOOTSTRAP -->
@@ -15,29 +15,58 @@
         <link rel="stylesheet" href="./css/style.css">
         <!-- HOJA DE ESTILO ANIMACION -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <title>M.HOUSE - Home</title>
     </head>
     <!-- CUERPO PAGINA WEB -->
-    <body>
+    <body class="bg-dark">
         <main id="mainIndex" class="container-fluid">
+            <div id="menuLateral" class="h-100 bg-warning">
+                <a id="anclaHome" href="#seccionHome"><img src="./assets/icons/vivienda.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaSobre" href="#seccionSobre"><img src="./assets/icons/vivienda.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaModulos" href="#seccionModulos"><img src="./assets/icons/vivienda.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaContacto" href="#seccionContacto"><img src="./assets/icons/vivienda.png" height="32px" width="32px" alt="..."></a>
+            </div>
             <div class="row h-auto">
                 <!-- HOME -->
-                <div id="home" class="bg-dark text-light d-flex justify-content-start align-items-start">
+                <div id="seccionHome" class="bg-dark text-light d-flex flex-column justify-content-start align-items-start">
                     <section id="homeTitulo">
-                        <p class="display-1 fw-bold">M.HOUSE</p>
-                        <p>arquitectura - casas modulares</p>
+                        <p class="display-1 fw-bold" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="1000">
+                            M.HOUSE
+                        </p>
+                        <p data-aos="fade-right" data-aos-easing="linear" data-aos-delay="800" data-aos-duration="1000">
+                            arquitectura - casas modulares
+                        </p>
                     </section>
+                    <section id="homeFrase" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="1500" data-aos-duration="1000">
+                        <p>
+                            "También la naturaleza debería vivir su propia vida. 
+                            Deberíamos evitar perturbarla con el colorido de nuestras casas y del mobiliario. 
+                            De todas formas, deberíamos esforzarnos por conseguir establecer una mayor armonía entre naturaleza, vivienda y hombre."
+                        </p>
+                        <p class="fw-bold">
+                            Mies Van der Rohe
+                        </p>
+                    </section>
+                    <div class="scrolldown-wrapper">
+                        <div class="scrolldown" data-aos="fade-down" data-aos-easing="linear" data-aos-delay="2000" data-aos-duration="1000">
+                            <svg height="30" width="10">
+                                <circle class="scrolldown-p1" cx="5" cy="15" r="2" />
+                                <circle class="scrolldown-p2" cx="5" cy="15" r="2" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <!-- SOBRE -->
-                <div id="sobre" class="bg-light">
+                <div id="seccionSobre" class="bg-light">
                     <section class="d-flex flex-column justify-content-start align-items-center">
-                        <p id="sobreTitulo" class="display-6 fw-bold">SOBRE</p>
-                        <p id="sobreTexto">SOMOS UN ESTUDIO DE ARQUITECTURA CON MAS DE 10 AÑOS DE EXPERIENCIA EN EL DESARROLLO DE VIVIENDAS MODULARES CON CONSTRUCCION EN SECO.
-                            ESTO NOS PERMITE AJUSTARNOS A LOS REQUISITOS DEL CLIENTE CON UNA BASE EN MODULOS, HACIENDO QUE LA MISMA VIVIENDA PUEDA AMPLIARSE Y MODIFICARSE 
+                        <p id="sobreTitulo" class="display-6 fw-bold" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">SOBRE</p>
+                        <p id="sobreTexto" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">SOMOS UN ESTUDIO DE ARQUITECTURA CON MAS DE 10 AÑOS DE EXPERIENCIA EN EL DESARROLLO DE VIVIENDAS MODULARES CON CONSTRUCCION EN SECO.
+                            ESTO NOS PERMITE AJUSTARNOS A LOS REQUISITOS DEL CLIENTE CON UNA BASE EN MODULOS, CONSTRUIDOS CON MATERIALES RECICLADOS COMO MADERA Y CARTON, HACIENDO QUE LA MISMA VIVIENDA PUEDA AMPLIARSE Y MODIFICARSE 
                             (YA SEA AGREGANDO NUEVOS MODULOS O MODIFICANDO LOS EXISTENTES).
                         </p>
                         <div id="sobreVentajas">
-                            <ul class="d-flex flex-row flex-wrap justify-content-center align-items-stretch">
+                            <ul id="listaElementosVentajas" class="d-flex flex-row flex-wrap justify-content-center align-items-stretch" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="800" data-aos-duration="800">
                                 <li class="d-flex flex-row">
                                     <div class="d-flex justify-content-center align-items-center">
                                         <img src="./assets/icons/sobre/alojamiento.png" height="64px" width="64px" alt="...">
@@ -71,179 +100,53 @@
                                         </div>
                                     </div>
                                 </li>
+                                <li class="d-flex flex-row">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="./assets/icons/sobre/camion-de-carga.png" height="64px" width="64px" alt="...">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div>
+                                            <p class="fw-bold fs-6">TRANSPORTABLE</p>
+                                            <p class="fs-6">NUESTRAS VIVIENDAS MODULARES SON TOTALMENTE TRANSPORTABLES A DONDE VOS NECESITES, DE FACIL ARMADO Y DESARMADO.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex flex-row">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <img src="./assets/icons/sobre/panel-solar.png" height="64px" width="64px" alt="...">
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div>
+                                            <p class="fw-bold fs-6">ENERGIA RENOVABLE</p>
+                                            <p class="fs-6">VIVIENDAS TOTALMENTE ABASTECIDAS CON ENERGIA SOLAR PROPIA.</p>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </section>
                 </div>
-                <!-- MODULOS Y PRESUPUESTAR -->
+                <div id="seccionImagen1">
+                </div>
+                <!-- MODULOS -->
                 <div id="seccionModulos" class="bg-dark d-flex flex-column justify-content-start align-items-center text-light">
                     <div id="modulosTilulo" class="d-flex flex-column justify-content-center align-items-center">
-                        <p class="display-6 fw-bold">MODULOS</p>
-                        <p>SELECCION LOS MODULOS EN LOS QUE ESTA INTERESADO PARA SU VIVIENDA MODULDAR</p>
+                        <p class="display-6 fw-bold" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">MODULOS</p>
+                        <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">SELECCION LOS MODULOS EN LOS QUE ESTA INTERESADO PARA SU VIVIENDA MODULDAR</p>
                     </div>
                     <div id="modulosLista">
-                        <ul class="d-flex flex-row flex-wrap justify-content-center align-items-stretch">
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/cocina.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">COCINA Y TOILETE</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="CocinaToilete">
-                                        <label class="form-check-label" for="CocinaToilete">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/lavadero.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">DESPENSA Y LAVADERO</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="DespensaLavadero">
-                                        <label class="form-check-label" for="DespensaLavadero">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/garaje.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">COCHERA</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="Cochera">
-                                        <label class="form-check-label" for="Cochera">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/sala-de-estar.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">ESTAR</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="Estar">
-                                        <label class="form-check-label" for="Estar">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/mesa-del-comedor.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">COMEDOR</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="Comedor">
-                                        <label class="form-check-label" for="Comedor">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/cama-matrimonial.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">HABITACION PRINCIPAL</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="HabitacionPrincipal">
-                                        <label class="form-check-label" for="HabitacionPrincipal">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/bano-publico.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">BAÑO COMPLETO EN SUITE</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="BanioCompletoEnSuite">
-                                        <label class="form-check-label" for="BanioCompletoEnSuite">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/cama-individual.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">HABITACION SIMPLE</p>
-                                        <p class="fs-6">MODULO DE COCINA COMPLETO CON ALACENA Y BAÑO DE INVITADOS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="HabitacionSimple">
-                                        <label class="form-check-label" for="HabitacionSimple">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/bano-publico.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">BAÑO COMPLETO</p>
-                                        <p class="fs-6">MODULO DE SERVICIO CON EL EQUIPAMIENTO COMPLETO PARA UN BAÑO CON TODOS EL EQUIPAMIENTO</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="BanioCompleto">
-                                        <label class="form-check-label" for="BanioCompleto">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="d-flex flex-row">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <img src="./assets/icons/modulos/escritorio.png" height="64px" width="64px" alt="...">
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <div>
-                                        <p class="fw-bold fs-6">ESTUDIO</p>
-                                        <p class="fs-6">MODULO PARA TU PROPIO AREA DE TRABAJO CON ESPACIO PARA 2 PERSONAS</p>
-                                    </div>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="Estudio">
-                                        <label class="form-check-label" for="Estudio">Encargar</label>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul id="listaElementosModulos" class="d-flex flex-row flex-wrap justify-content-center align-items-stretch" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
                         </ul>
                     </div>
                 </div>
-                <div id="presupuestar" class="bg-light d-flex flex-column">
+                <!-- PRESUPUESTAR --> 
+                <div id="seccionPresupuestar" class="bg-light d-flex flex-column">
                     <section class="d-flex flex-column justify-content-center align-items-center">
-                        <p class="display-6 fw-bold">PRESUPUESTAR</p>
-                        <p>SEGUN LOS MODULOS QUE NECESITE SELECCIONE EN EL APARTADO DE MODULOS LOS QUE CREA NECESARIO, A CONTINUACION HAGA CLICK EN EL BOTON PRESUPUESTAR</p>
-                        <button id="botonPresupuestar" type="button" class="btn btn-outline-dark">PRESUPUESTAR</button>
+                        <p class="display-6 fw-bold" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">PRESUPUESTAR</p>
+                        <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">SEGUN LOS MODULOS QUE NECESITE SELECCIONE EN EL APARTADO DE MODULOS LOS QUE CREA NECESARIO, A CONTINUACION HAGA CLICK EN EL BOTON PRESUPUESTAR</p>
+                        <button id="botonPresupuestar" type="button" class="btn btn-outline-dark" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">PRESUPUESTAR</button>
                     </section>
-                    <section id="presupuestarResultados" class="d-flex flex-column justify-content-start align-items-center">
-                        <!--<p>PRESUPUESTO ESTIMADO</p>-->
+                    <section id="presupuestarResultados" class="d-flex flex-column justify-content-start align-items-center" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <p class="fw-bold">MONTO TOTAL DE LA VIVIENDA:</p>
                             <p id="montoVivienda"></p>
@@ -258,17 +161,19 @@
                         </div>
                     </section>
                 </div>
+                <div id="seccionImagen2">
+                </div>
                 <!-- CONTACTO --> 
-                <div id="contacto" class="bg-dark d-flex flex-column justify-content-start align-items-center">       
-                    <p class="display-6 fw-bold text-light">CONTACTO</p>
+                <div id="seccionContacto" class="bg-dark d-flex flex-column justify-content-start align-items-center">       
+                    <p class="display-6 fw-bold text-light" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">CONTACTO</p>
                     <!-- INFORMACION DEL SITIO -->
-                    <section id="contactoDerechosAutor" class="col-12 col-sm-12 col-md-8 text-light">
+                    <section id="contactoDerechosAutor" class="col-12 col-sm-12 col-md-8 text-light" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
                         <p class="d-flex justify-content-center align-items-end">© MH - Facundo Heredia</p>
                         <p class="d-flex justify-content-center align-items-baseline">CODERHOUSE - javascript - 2023 - Comision 39465</p>
                     </section>
                     <!-- REDES SOCIALES DEL SITIO -->
                     <section class="col-12 col-sm-12 col-md-4">
-                        <ul class="d-flex justify-content-evenly align-items-center">
+                        <ul class="d-flex justify-content-evenly align-items-center" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="800" data-aos-duration="800">
                             <li><a href="https://es-la.facebook.com/" target="_blank"><img src="./assets/icons/logo_facebook.png"></a></li>
                             <li><a href="https://www.instagram.com/" target="_blank"><img src="./assets/icons/logo_instagram.png"></a></li>
                             <li><a href="https://web.whatsapp.com/" target="_blank"><img src="./assets/icons/logo_whatsapp.png"></a></li>
@@ -276,10 +181,15 @@
                         </ul>
                     </section>
                 </div> 
+                <div id="seccionImagen3">
+                </div>
             </div>
         </main>
     <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- SCRIPT JAVASCRIPT -->
     <script type="module" src="./javascript/scripts.js"></script>
+    <!-- SCRIPT ANIMACION AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </body>
 </html>

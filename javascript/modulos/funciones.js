@@ -2,142 +2,52 @@
 //                             IMPORTACIONES
 //=======================================================================
 // MODULOS IMPORTADOS
-import { Modulo, Vivienda } from "./clases.js";
+import { Vivienda } from "./clases.js";
+import { modulos } from "./modulos.js";
 
 //=======================================================================
 //                             FUNCIONES
 //=======================================================================
+
 // FUNCION VERIFICAR MODULOS
-/// @brief Funcion que verifica si el modulo (tarjetas de modulos) esta seleccionado
-///
-/// modulosVivienda -> array que contiene el id de los diferentes modulos
-/// espacio         -> variable que guarda en cada iteracion el id del array
-/// modulosPedidos  -> array donde se guardan las id de los modulos seleccionados
-/// return          -> la funcion devuelve la vivienda con las id de los modulos seleccionados
-function verificarModulos() {
-  //ARMAR DE MANERA DINAMICA LA FORMACION DEL ARRAY TOMANDO LOS ID
-  const modulosVivienda = [
-    "#CocinaToilete",
-    "#DespensaLavadero",
-    "#Cochera",
-    "#Estar",
-    "#Comedor",
-    "#HabitacionPrincipal",
-    "#BanioCompletoEnSuite",
-    "#HabitacionSimple",
-    "#BanioCompleto",
-    "#Estudio",
-  ];
-  let espacio;
+/// @brief Funcion que verifica si el modulo (tarjetas de modulos) esta seleccionado al apretar boton presupuestar
+/// idModuloPedido -> variable que toma el id de la tarjeta del modulo
+/// modulosPedidos -> array donde se guardan los modulos que hay sido seleccionados
+/// return         -> la funcion devuelve el array con todos los modulos seleccionados
+function verificarModulos(modulos) {
+  let idModuloPedido;
   const modulosPedidos = [];
 
-  for (let i = 0; i < modulosVivienda.length; i++) {
-    espacio = document.querySelector(modulosVivienda[i]);
+  modulos.forEach(element => {
+    idModuloPedido = document.querySelector(`#${element.id}`);
 
-    if (espacio.checked) {
-      modulosPedidos.push(modulosVivienda[i]);
+    if(idModuloPedido.checked) {
+      element.cantidad = 1;
+      modulosPedidos.push(element);
     }
-  }
+  });
 
   return modulosPedidos;
 }
 
 // FUNCION VIVIENDA ARMADA
-/// @brief Funcion que construye los modulos pedidos con los datos alojados
-///
-/// viviendaArmada  -> array que guarda las clases de cada modulo pedido con sus datos
-/// nombre          -> nombre del modulo segun su id
-/// precio          -> precio del modulo
-/// cantidad        -> cantidad de los modulos del mismo tipo pedido
+/// @brief Funcion que construye la clase Vivienda con los modulos pedidos con los datos alojados
+/// viviendaArmada          -> clase Vivienda con los datos de la vivienda presupuestada
+/// presupuestoVivienda     -> obtiene el valor de cada modulo y lo acumula
+/// cantidadModulosVivienda -> obtiene la cantidad de cada modulo y lo acumula
+/// return                  -> devuelve la vivienda armada
 function armadoVivienda(modulosPedidos) {
-  const viviendaArmada = [];
-  let nombre;
-  let precio;
-  let cantidad;
+  let presupuestoVivienda = 0;
+  let cantidadModulosVivienda = 0;
 
-  for (let i = 0; i < modulosPedidos.length; i++) {
-    switch (modulosPedidos[i]) {
-      case "#CocinaToilete":
-        nombre = "Cocina y Toilete";
-        precio = 25000;
-        cantidad = 1;
-        break;
-      case "#DespensaLavadero":
-        nombre = "Despensa y Lavadero";
-        precio = 2000;
-        cantidad = 1;
-        break;
-      case "#Cochera":
-        nombre = "Cochera";
-        precio = 10000;
-        cantidad = 1;
-        break;
-      case "#Estar":
-        nombre = "Estar";
-        precio = 10000;
-        cantidad = 1;
-        break;
-      case "#Comedor":
-        nombre = "Comedor";
-        precio = 10000;
-        cantidad = 1;
-        break;
-      case "#HabitacionPrincipal":
-        nombre = "Habitacion Principal";
-        precio = 15000;
-        cantidad = 1;
-        break;
-      case "#BanioCompletoEnSuite":
-        nombre = "Baño Completo en suite";
-        precio = 20000;
-        cantidad = 1;
-        break;
-      case "#HabitacionSimple":
-        nombre = "Habitacion Simple";
-        precio = 10000;
-        cantidad = 1;
-        break;
-      case "#BanioCompleto":
-        nombre = "Baño Completo";
-        precio = 15000;
-        cantidad = 1;
-        break;
-      case "#Estudio":
-        nombre = "Estudio";
-        precio = 5000;
-        cantidad = 1;
-        break;
-      default:
-        nombre = "Sin Modulo";
-        precio = 0;
-        cantidad = 0;
-        break;
-    }
-    viviendaArmada.push(new Modulo(nombre, precio, cantidad));
-  }
+  modulosPedidos.forEach(element => {
+    presupuestoVivienda += element.precio;
+    cantidadModulosVivienda += element.cantidad;
+  });
+
+  const viviendaArmada = new Vivienda (presupuestoVivienda, cantidadModulosVivienda, modulosPedidos);
+
   return viviendaArmada;
-}
-
-// FUNCION DE PRESUPUESTO FINAL
-/// @brief Funcion que obtiene los datos finales del a vivienda
-///
-/// montoFinal      -> se guarda el monto final con la suma de todos los modulos
-/// cantidadModulos -> se guarda la suma de la cantidad final de los modulos pedidos
-/// modulos         -> array donde se guardan cada modulo por separado con sus datos
-function presupuestoFinal(viviendaArmada) {
-  let montoFinal = 0;
-  let cantidadModulos = 0;
-  let modulos = [];
-
-  for (let i = 0; i < viviendaArmada.length; i++) {
-    montoFinal += viviendaArmada[i].precio;
-    cantidadModulos += viviendaArmada[i].cantidad;
-    modulos[i] = viviendaArmada[i];
-  }
-
-  const viviendaFinal = new Vivienda(montoFinal, cantidadModulos, modulos);
-
-  return viviendaFinal;
 }
 
 // FUNCION MOSTRAR PRESUPUESTO
@@ -173,24 +83,21 @@ function borrarListaExistente () {
 
 // FUNCION PRESUPUESTAR VIVIENDA AL APRETAR BOTON
 /// @brief Funcion principal que se llama al apretar el boton
-///
-/// modulosPedidosDeVivienda    -> array que guarda los datos de cada modulo pedido
-/// viviendaArmada              -> array que guarda los datos finales de la vivienda completa
+/// modulosPedidos  -> array que guarda los datos de cada modulo pedido
+/// viviendaArmada  -> array que guarda los datos finales de la vivienda completa
 function presupuestarVivienda() {
-  const modulosPedidos = verificarModulos();
+  const modulosPedidos = verificarModulos(modulos);
 
   if (modulosPedidos.length == 0) {
     alert("PARA PRESUPUESTAR POR FAVOR AGREGA AL MENOS UN MODULO");
   } else {
     const viviendaArmada = armadoVivienda(modulosPedidos);
-    const viviendaFinal = presupuestoFinal(viviendaArmada);
-
-    mostrarPresupuesto(viviendaFinal);
+    mostrarPresupuesto(viviendaArmada);
   }
 }
 
 //=======================================================================
-//                             IMPORTACIONES
+//                             EXPORTACIONES
 //=======================================================================
 
 // FUNCIONES EXPORTADAS

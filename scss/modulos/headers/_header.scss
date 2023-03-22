@@ -1,7 +1,6 @@
 header {
-  height: 10vh;
-  border: $boderFino;
-  border-bottom-color: map-get($colors, blancoCincuentaTransparencia);
-  position: relative !important;
-  z-index: 2;
+    top: 0;
+    nav {
+        max-height: 5vh !important;
+    }
 }
