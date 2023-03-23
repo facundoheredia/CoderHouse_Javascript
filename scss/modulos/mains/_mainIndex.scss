@@ -3,35 +3,39 @@ main {
     a {
       z-index: 99;
       position: fixed;
-      left: -80px;
+      left: -100px;
       transition: 0.3s;
       padding: 15px;
-      width: 100px;
+      width: 120px;
       &:hover {
-        left: 0;
+        left: -20px;
       }
     }
     #anclaHome {
-      top: 2rem;
-      background-color: #04AA6D;
+      top: 20vh;
+      background-color: #2195F3;
+      box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaSobre {
-      top: 8rem;
+      top: 40vh;
       background-color: #2195F3;
+      box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaModulos {
-      top: 14rem;
-      background-color: #f44336;
+      top: 60vh;
+      background-color: #2195F3;
+      box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaContacto {
-      top: 20rem;
-      background-color: #555;
+      top: 80vh;
+      background-color: #2195F3;
+      box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
 }
   div {
     #seccionHome {
       height: 100vh;
-      background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, rgba(33, 37, 41, 1) 60%), url("../../../assets/images/home/1.jpg");
+      background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, rgba(33, 37, 41, 1) 60%), url("../../../assets/images/fondos/ImagePT6.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -113,7 +117,7 @@ main {
     }
     #seccionImagen1 {
       height: 50vh;
-      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
+      background-image: url("../../../assets/images/fondos/ImagePT6.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -162,25 +166,42 @@ main {
     }
     #seccionImagen2 {
       height: 50vh;
-      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
+      background-image: url("../../../assets/images/fondos/ImagePT7.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
     #seccionContacto {
       padding-top: 2rem;
-      #contactoDerechosAutor {
-        p {
-          font-size: 0.75rem !important;
+      #contactoUbicacion {
+        iframe {
+          margin: 0;
+          height: 300px;
+          padding-bottom: 2rem;
         }
       }
-    }
-    #seccionImagen3 {
-      height: 50vh;
-      background-image: url("../../../assets/images/fondos/fondoImagen1.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      div {
+        #contactoInformacion {
+          ul {
+            li {
+              padding-left: 2rem;
+              div {
+                padding-left: 2rem;
+                p {
+                  padding-left: 2rem;
+                }
+              }
+            }
+          }
+        }
+        div {
+          #contactoDerechosAutor {
+            p {
+              font-size: 0.75rem !important;
+            }
+          }
+        }
+      }
     }
   }
 }
