@@ -14,7 +14,7 @@ import { modulos } from "./modulos/modulos.js";
 const listaModuloshtml = document.querySelector("#listaElementosModulos");
 
 modulos.forEach(modulo=>{listaModuloshtml.innerHTML += 
-    `<li class="d-flex flex-row">
+    `<li class="d-flex flex-row" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
     <div class="d-flex justify-content-center align-items-center">
         <img src=${modulo.icono} height="64px" width="64px" alt=${modulo.nombre}>
     </div>
@@ -28,8 +28,12 @@ modulos.forEach(modulo=>{listaModuloshtml.innerHTML +=
             <label class="form-check-label" for=${modulo.id}>Encargar</label>
         </div>
     </div>
-    </li>`;}
-);
+    </li>`;});
+
+//=======================================================================
+//                  INICIALIZADOR ANIMACIONES AOS
+//=======================================================================
+AOS.init();
 
 //=======================================================================
 //                         BOTON PRESUPUESTAR
@@ -41,8 +45,3 @@ window.onload = function () {
     const botonPresupuestar = document.querySelector("#botonPresupuestar");
     botonPresupuestar.onclick = presupuestarVivienda;
 }
-
-//=======================================================================
-//                  INICIALIZADOR ANIMACIONES AOS
-//=======================================================================
-AOS.init();

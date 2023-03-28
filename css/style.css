@@ -38,7 +38,7 @@ body main #menuLateral #anclaContacto {
 
 body main div #seccionHome {
   height: 100vh;
-  background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, #212529 60%), url("../../../assets/images/fondos/ImagePT6.webp");
+  background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, #212529 60%), url("../../../assets/images/fondos/fondoHome.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -108,7 +108,7 @@ body main div #seccionSobre #sobreVentajas {
 
 body main div #seccionImagen1 {
   height: 50vh;
-  background-image: url("../../../assets/images/fondos/ImagePT6.webp");
+  background-image: url("../../../assets/images/fondos/Imagen1.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -140,10 +140,14 @@ body main div #seccionPresupuestar {
   padding-top: 2rem; }
   body main div #seccionPresupuestar #presupuestarResultados {
     padding-top: 2rem; }
+    body main div #seccionPresupuestar #presupuestarResultados div #seccionPedirDatos div div {
+      padding-top: 1rem; }
+      body main div #seccionPresupuestar #presupuestarResultados div #seccionPedirDatos div div button {
+        margin-bottom: 2rem; }
 
 body main div #seccionImagen2 {
   height: 50vh;
-  background-image: url("../../../assets/images/fondos/ImagePT7.webp");
+  background-image: url("../../../assets/images/fondos/Imagen2.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }

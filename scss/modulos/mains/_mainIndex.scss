@@ -35,7 +35,7 @@ main {
   div {
     #seccionHome {
       height: 100vh;
-      background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, rgba(33, 37, 41, 1) 60%), url("../../../assets/images/fondos/ImagePT6.webp");
+      background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, rgba(33, 37, 41, 1) 60%), url("../../../assets/images/fondos/fondoHome.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -117,7 +117,7 @@ main {
     }
     #seccionImagen1 {
       height: 50vh;
-      background-image: url("../../../assets/images/fondos/ImagePT6.webp");
+      background-image: url("../../../assets/images/fondos/Imagen1.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -162,11 +162,23 @@ main {
       padding-top: 2rem;
       #presupuestarResultados {
         padding-top: 2rem;
+        div {
+          #seccionPedirDatos {
+            div {
+              div {
+                padding-top: 1rem;
+                button {
+                  margin-bottom: 2rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
     #seccionImagen2 {
       height: 50vh;
-      background-image: url("../../../assets/images/fondos/ImagePT7.webp");
+      background-image: url("../../../assets/images/fondos/Imagen2.webp");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;

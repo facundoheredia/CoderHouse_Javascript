@@ -8,6 +8,7 @@ import { ModuloVivienda } from "./clases.js";
 //                              MODULOS
 //=======================================================================
 /// @brief Array encargada de crear los modulos con sus datos
+// ID - Nombre Modulo - Descripccion Modulo - Precio Modulo - Cantidad Modulo - Icono Modulo - Tipo de espacio
 const modulos = [
   new ModuloVivienda(
     "CocinaToilete",
