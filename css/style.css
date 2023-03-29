@@ -38,7 +38,7 @@ body main #menuLateral #anclaContacto {
 
 body main div #seccionHome {
   height: 100vh;
-  background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, #212529 60%), url("../../../assets/images/fondos/fondoHome.webp");
+  background-image: linear-gradient(270deg, rgba(248, 249, 250, 0) 30%, #212529 60%), url("../assets/images/fondos/fondoHome.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
