@@ -108,7 +108,7 @@ body main div #seccionSobre #sobreVentajas {
 
 body main div #seccionImagen1 {
   height: 50vh;
-  background-image: url("../../../assets/images/fondos/Imagen1.webp");
+  background-image: url("../assets/images/fondos/Imagen1.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -147,7 +147,7 @@ body main div #seccionPresupuestar {
 
 body main div #seccionImagen2 {
   height: 50vh;
-  background-image: url("../../../assets/images/fondos/Imagen2.webp");
+  background-image: url("../assets/images/fondos/Imagen2.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
