@@ -2,11 +2,10 @@
 //                             STORAGE
 //=======================================================================
 // FUNCION QUE GUARDA LA INFORMACION DEL PRESUPUESTO EN EL SESSION STORAGE
-function setSessionStorageData (nombreCliente,apellidoCliente,cuotasCliente,viviendaCliente) {
+function setClientSessionStorageData (nombreCliente,apellidoCliente,cuotasCliente) {
     sessionStorage.setItem('nombre',nombreCliente);
     sessionStorage.setItem('apellido',apellidoCliente);
     sessionStorage.setItem('cuotas',cuotasCliente);
-    sessionStorage.setItem('vivienda',JSON.stringify(viviendaCliente));
 }
 
 // FUNCION QUE OBTIENE LA INFORMACION DEL PRESUPUESTO EN EL SESSION STORAGE
@@ -30,4 +29,4 @@ function clearSessionStorageData () {
 //=======================================================================
 
 // FUNCIONES EXPORTADAS
-export { setSessionStorageData, getSessionStorageData, clearSessionStorageData};
+export { setClientSessionStorageData, getSessionStorageData, clearSessionStorageData};

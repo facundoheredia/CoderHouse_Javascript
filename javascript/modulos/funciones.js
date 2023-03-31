@@ -4,7 +4,7 @@
 // MODULOS IMPORTADOS
 import { Vivienda } from "./clases.js";
 import { modulos } from "./modulos.js";
-import { setSessionStorageData, clearSessionStorageData} from "./sessionStorage.js";
+import { setClientSessionStorageData } from "./sessionStorage.js";
 
 //=======================================================================
 //                             FUNCIONES
@@ -65,7 +65,6 @@ function mostrarPresupuesto(viviendaFinal) {
 
   encabezadoTablaPresupuesto(detalleModulos);
   listarElementosPresupuestados(viviendaFinal);
-  //encargarVivienda();
 }
 
 // FUNCION ENCABEZADO DE TABLA
@@ -86,7 +85,6 @@ function encabezadoTablaPresupuesto (detalleModulos) {
   </table>`;
 }
 
-
 // FUNCION LISTAR ELEMENTOS PEDIDOS
 /// @brief Funcion que se encarga de agregar los elementos en la tabla del presupuesto
 function listarElementosPresupuestados (viviendaFinal) {
@@ -95,7 +93,7 @@ function listarElementosPresupuestados (viviendaFinal) {
   for (const modulo of viviendaFinal.modulos) {
     tablaListaElementos.innerHTML += 
     `<tr>
-    <th scope="row"><img src=${modulo.icono} height="32px" width="32px" alt=${modulo.nombre}></th>
+    <th scope="row"><img src=${modulo.icono} height="32px" width="32px" alt=${modulo.nombre} style="filter: invert(100%)"></th>
     <td>${modulo.nombre}</td>
     <td>${modulo.cantidad}</td>
     <td>U$D ${modulo.precio}</td>
@@ -119,6 +117,7 @@ function borrarListaExistente () {
     listaNodos[i].remove();
   }
 }
+
 
 // FUNCION MOSTRAR DATOS PARA ENCARGAR VIVIENDA
 /// @brief Funcion que se encarga de mostrar los datos para que el cliente termine de encargar la vivienda que presupuesto
@@ -161,34 +160,69 @@ function formularioEncargarVivienda () {
   </div>
   <div class="row">
     <div class="d-flex justify-content-center align-items-center">
-      <button id="botonEncargarVivienda" type="submit" class="btn btn-outline-dark" onclick="guardarDatosCliente()">ENCARGAR VIVIENDA</button>
+      <button id="botonEncargarVivienda" type="submit" class="btn btn-outline-dark">ENCARGAR VIVIENDA</button>
     </div>  
   </div>`;
-
-  /*
-  SI ESTA ACA PASA LOS DATOS DE NOMBRE, APELLIDO, CUOTAS SIN PROBLEMAS, MENOS VIVIENDA YA QUE NO LO RECIBE
-
-  const botonEncargarVivienda = document.querySelector("#botonEncargarVivienda");
-  botonEncargarVivienda.onclick = guardarDatosCliente();
-  */
 }
 
-// FUNCION PEDIR DATOS CLIENTE
-/// @brief Funcion que al aparecer la lista del presupuesto y el formulario, guarda los datos al apretar el boton encargar vivienda
-function guardarDatosCliente (viviendaArmada) {
-  clearSessionStorageData();
+// FUNCION INTERES SEGUN CUOTAS
+/// @brief Funcion que modifica el monto final de la vivienda segun el monto que se elija
+/// cantidadCuotas  -> parametro con el que se modifica la variable interes
+/// interes         -> variable que toma el valor segun la cantidad de cuotas elegidas
+/// return          -> devuelve el interes con el valor asignado
+function interesSegunCantidadCuotas (cantidadCuotas) {
+  let interes;
+  
+  switch(parseInt(cantidadCuotas)) {
+    case 3:
+      interes = 5;
+      break;
+    case 6:
+      interes = 10;
+      break;
+    case 12:
+      interes = 15;
+      break;
+    case 24:
+      interes = 20;
+      break;
+    case 36:
+      interes = 25;
+      break;
+    default:
+      interes = 0;
+      break;
+  }
 
-  const nombreCliente = document.querySelector("#nombreCliente").value;
-  const apellidoCliente = document.querySelector("#apellidoCliente").value;
-  const cantidadCuotas = document.querySelector("#cantidadCuotas").value;
+  return interes;
+}
 
-  setSessionStorageData(nombreCliente,apellidoCliente,cantidadCuotas,viviendaArmada);
+// FUNCION MONTO SEGUN CUOTAS
+/// @brief Funcion que segun el valor de la vivienda presupuestada y cantidad de cuotas ingresa el valor en el html como leyenda
+/// viviendaArmada      -> parametro que recibe la funcion con los datos de la vivienda presupuestada
+/// cantidadCuotas      -> variable que toma el valor del input cuotas
+/// interes             -> variable que toma el interes devolvido por la funcion
+/// montoVivienda       -> variable que toma el valor de la propiedad de la viviendaArmada
+/// montoViviendaFinal  -> variable que obtiene el valor final con el interes
+/// precioCuota         -> variable que toma el valor de cada una de las cuotas a pagar
+/// leyendaCuotas       -> variable que toma el id de la seccion donde insertar la leyenda del monto de cuotas y precio de cada una
+function montoFinalConCuotas (viviendaArmada) {
+  let cantidadCuotas = document.querySelector("#cantidadCuotas").value;
+  const interes = interesSegunCantidadCuotas(cantidadCuotas);
+  const montoVivienda = viviendaArmada.presupuesto;
+  const montoViviendaFinal = ((montoVivienda * interes) / 100) + montoVivienda;
+  const precioCuota = montoViviendaFinal / cantidadCuotas;
+  const leyendaCuotas = document.querySelector("#precioFinalCuotas");
+  leyendaCuotas.innerText = `Usted va a estar pagando ${cantidadCuotas} cuota/as de U$D ${precioCuota} cada una. Monto final a pagar es de U$D ${montoViviendaFinal}`;
 }
 
 // FUNCION PRESUPUESTAR VIVIENDA AL APRETAR BOTON PRESUPUESTAR
-/// @brief Funcion principal que se llama al apretar el boton
-/// modulosPedidos  -> array que guarda los datos de cada modulo pedido
+/// @brief Funcion principal que se llama al apretar el boton "presupuestar"
+/// Si no hay ningun modulo seleccionado (modulosPedidos) exibira el alert con la leyenda
+/// modulosPedidos  -> array que guarda los datos de cada modulo pedido llamando a la funcion verificarModulos
 /// viviendaArmada  -> array que guarda los datos finales de la vivienda completa
+///
+/// Luego del llamado de todas las funciones guarda la vivienda en el sessionStorage
 function presupuestarVivienda() {
   const modulosPedidos = verificarModulos(modulos);
 
@@ -198,15 +232,26 @@ function presupuestarVivienda() {
     const viviendaArmada = armadoVivienda(modulosPedidos);
     mostrarPresupuesto(viviendaArmada);
     formularioEncargarVivienda();
-
-    /*
-    SI ESTA ACA PASA DIRECTAMENTE EL DATO DE LA VIVIENDA Y NO LOS OTROS YA QUE ES COMO SI DIRECTAMENTE AL APRETAR "PRESUPUESTAR" TAMBIEN HACE CLICK EN ESTE BOTON
-    const botonEncargarVivienda = document.querySelector("#botonEncargarVivienda");
-    botonEncargarVivienda.onclick = guardarDatosCliente(viviendaArmada);
-    */
+    montoFinalConCuotas(viviendaArmada);
+    sessionStorage.setItem('vivienda',JSON.stringify(viviendaArmada));
   }
+}
 
-  
+// FUNCION ENCARGAR VIVIENDA AL APRETAR EL BOTON ENCARGAR VIVIENDA
+/// @brief Funcion principal que se llama al apretar el boton
+/// nombreCliente   -> guarda lo ingresado en el input "nombre" del formulario
+/// apellidoCliente -> guarda lo ingresado en el input "apellido" del formulario
+/// cantidadCuotas  -> guarda la opcion elegida en el menu desplegable "cuotas" del formulario
+///
+/// Si todos los inputs se encuentran completos se pueden guardar los datos en el storage
+function encargarVivienda() {
+  const nombreCliente = document.querySelector("#nombreCliente").value;
+  const apellidoCliente = document.querySelector("#apellidoCliente").value;
+  const cantidadCuotas = document.querySelector("#cantidadCuotas").value;
+
+  if(nombreCliente != "" && apellidoCliente != "" && cantidadCuotas != "") {
+    setClientSessionStorageData(nombreCliente,apellidoCliente,cantidadCuotas,);
+  }
 }
 
 //=======================================================================
@@ -214,4 +259,4 @@ function presupuestarVivienda() {
 //=======================================================================
 
 // FUNCIONES EXPORTADAS
-export { presupuestarVivienda };
+export { presupuestarVivienda , encargarVivienda};
