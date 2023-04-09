@@ -4,7 +4,7 @@
 // MODULOS IMPORTADOS
 import { Vivienda } from "./clases.js";
 import { modulos } from "./modulos.js";
-import { setClientSessionStorageData } from "./sessionStorage.js";
+import { setClientSessionStorageData, getSessionStorageData, setApiClientData, getApiClientData } from "./sessionStorage.js";
 
 //=======================================================================
 //                             FUNCIONES
@@ -213,6 +213,7 @@ function montoFinalConCuotas (viviendaArmada) {
   const montoViviendaFinal = ((montoVivienda * interes) / 100) + montoVivienda;
   const precioCuota = montoViviendaFinal / cantidadCuotas;
   const leyendaCuotas = document.querySelector("#precioFinalCuotas");
+
   leyendaCuotas.innerText = `Usted va a estar pagando ${cantidadCuotas} cuota/as de U$D ${precioCuota} cada una. Monto final a pagar es de U$D ${montoViviendaFinal}`;
 }
 
@@ -250,8 +251,12 @@ function encargarVivienda() {
   const cantidadCuotas = document.querySelector("#cantidadCuotas").value;
 
   if(nombreCliente != "" && apellidoCliente != "" && cantidadCuotas != "") {
-    setClientSessionStorageData(nombreCliente,apellidoCliente,cantidadCuotas,);
+    setClientSessionStorageData(nombreCliente,apellidoCliente,cantidadCuotas);
   }
+
+  const presupuesto = getSessionStorageData ();
+  setApiClientData(presupuesto);
+  getApiClientData();
 }
 
 //=======================================================================

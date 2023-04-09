@@ -22,6 +22,6 @@ AOS.init();
 //                            BOTONES
 //=======================================================================
 window.onload = function () {
-    botonPrespuestar()
+    botonPrespuestar();
     botonEncargar();
 }
