@@ -37,7 +37,7 @@ function seccionHtmlModulos () {
 /// Se encargar de ingresar en el DOM la lista de modulos seleccionados para presupuestar la vivienda
 function abrirHtmlPresupuesto () {
     window.open(
-        "../../pages/presupuesto.html",
+        "./pages/presupuesto.html",
         "presupuesto"
       );
 }
