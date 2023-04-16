@@ -1,4 +1,4 @@
-main {
+#mainIndex {
   #menuLateral {
     a {
       z-index: 99;
@@ -13,22 +13,22 @@ main {
     }
     #anclaHome {
       top: 20vh;
-      background-color: #2195F3;
+      background-color: #ffffff;
       box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaSobre {
       top: 40vh;
-      background-color: #2195F3;
+      background-color:#ffffff;
       box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaModulos {
       top: 60vh;
-      background-color: #2195F3;
+      background-color: #ffffff;
       box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
     #anclaContacto {
       top: 80vh;
-      background-color: #2195F3;
+      background-color: #ffffff;
       box-shadow: 0.5rem 0.5rem 0.5rem map-get($colors, negroCincuentaTransparencia);
     }
 }
@@ -160,10 +160,25 @@ main {
     }
     #seccionPresupuestar {
       padding-top: 2rem;
-      #presupuestarResultados {
+      #seccionPresupuestar_Texto {
+        p {
+          padding: 0 2rem 0 2rem;
+        }
+      }
+      #seccionPresupuestar_Detalles {
         padding-top: 2rem;
         div {
-          #seccionPedirDatos {
+          #seccionPresupuestar_Detalles_Tabla {
+            table {
+              width: 95vw;
+              thead {
+                tr {
+                  height: 47px !important;
+                }
+              }
+            }
+          }
+          #seccionPresupuestar_Detalles_Datos {
             div {
               div {
                 padding-top: 1rem;
@@ -172,6 +187,13 @@ main {
                 }
               }
             }
+          }
+        }
+      }
+      #seccionPresupuestar_Formulario {
+        div {
+          #seccionPresupuestar_Formulario_botonEncargarVivienda {
+            padding-bottom: 2rem;
           }
         }
       }

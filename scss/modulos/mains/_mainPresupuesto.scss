@@ -1,0 +1,57 @@
+#mainPresupuesto {
+  div {
+    #seccionPresupuesto {
+      section {
+        #seccionPresupuesto_Lista {
+          margin: 2rem;
+          width: 95vw;
+          #seccionPresupuesto_Lista_Logo {
+            #seccionEncabezado_titulo {
+              font-size: 2rem;
+              margin: 0;
+            }
+            #seccionEncabezado_subtitulo {
+              font-size: 1rem;
+              margin: 0;
+            }
+          }
+          #seccionContacto {
+            padding-top: 2rem;
+            #contactoUbicacion {
+              iframe {
+                margin: 0;
+                height: 300px;
+                padding-bottom: 2rem;
+              }
+            }
+            div {
+              #contactoInformacion {
+                ul {
+                  li {
+                    div {
+                      padding-left: 2rem;
+                      h6 {
+                        font-size: 0.75rem;
+                      }
+                      p {
+                        padding-left: 2rem;
+                        font-size: 0.75rem;
+                      }
+                    }
+                  }
+                }
+              }
+              div {
+                #contactoDerechosAutor {
+                  p {
+                    font-size: 0.75rem !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -23,10 +23,10 @@
         <main id="mainIndex" class="container-fluid">
             <!-- MENU LATERAL -->
             <div id="menuLateral">
-                <a id="anclaHome" class="d-flex justify-content-center align-items-center" href="#seccionHome"><img src="./assets/icons/menu/hogar.png" height="32px" width="32px" alt="..."></a>
-                <a id="anclaSobre" class="d-flex justify-content-center align-items-center" href="#seccionSobre"><img src="./assets/icons/menu/usuario.png" height="32px" width="32px" alt="..."></a>
-                <a id="anclaModulos" class="d-flex justify-content-center align-items-center" href="#seccionModulos"><img src="./assets/icons/menu/carrito-de-compras.png" height="32px" width="32px" alt="..."></a>
-                <a id="anclaContacto" class="d-flex justify-content-center align-items-center" href="#seccionContacto"><img src="./assets/icons/menu/sobre.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaHome" class="d-flex justify-content-center align-items-center border border-dark rounded-end" href="#seccionHome"><img src="./assets/icons/menu/hogar.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaSobre" class="d-flex justify-content-center align-items-center border border-dark rounded-end" href="#seccionSobre"><img src="./assets/icons/menu/usuario.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaModulos" class="d-flex justify-content-center align-items-center border border-dark rounded-end" href="#seccionModulos"><img src="./assets/icons/menu/carrito-de-compras.png" height="32px" width="32px" alt="..."></a>
+                <a id="anclaContacto" class="d-flex justify-content-center align-items-center border border-dark rounded-end" href="#seccionContacto"><img src="./assets/icons/menu/sobre.png" height="32px" width="32px" alt="..."></a>
             </div>
             <div class="row h-auto">
                 <!-- HOME -->
@@ -142,16 +142,28 @@
                 </div>
                 <!-- PRESUPUESTAR --> 
                 <div id="seccionPresupuestar" class="bg-light d-flex flex-column">
-                    <section class="d-flex flex-column justify-content-center align-items-center">
+                    <section id="seccionPresupuestar_Texto" class="d-flex flex-column justify-content-center align-items-center">
                         <p class="display-6 fw-bold" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">PRESUPUESTAR</p>
-                        <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">SEGUN LOS MODULOS QUE NECESITE SELECCIONE EN EL APARTADO DE MODULOS LOS QUE CREA NECESARIO, A CONTINUACION HAGA CLICK EN EL BOTON PRESUPUESTAR</p>
-                        <button id="botonPresupuestar" type="button" class="btn btn-outline-dark" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">PRESUPUESTAR</button>
+                        <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
+                            SEGUN LOS MODULOS QUE NECESITE SELECCIONE EN EL APARTADO DE MODULOS LOS QUE CREA NECESARIO, SE AGREGARAN EN LA TABLA QUE SE GENERARA DEBAJO.
+                            CUANDO ESTE A GUSTO, LLENE LOS DATOS QUE SE PIDE Y A CONTINUACION HAGA CLICK EN EL BOTON ENCARGAR.</p>
                     </section>
-                    <section id="presupuestarResultados" class="d-flex flex-column justify-content-start align-items-center" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-delay="500" data-aos-duration="800">
+                    <section id="seccionPresupuestar_Detalles" class="d-flex flex-column justify-content-start align-items-center">
                         <div class="d-flex flex-column">
-                            <div id="detalleModulos" class="d-flex flex-column justify-content-center align-items-center"></div>
-                            <section id="seccionPedirDatos" class="container-fluid"></section>
+                            <div id="seccionPresupuestar_Detalles_Tabla" class="container d-flex flex-column justify-content-center align-items-center">
+                                <table class="table table-responsive table-hover table-sm table align-middle">
+                                    <thead id="seccionPresupuestar_Detalles_Tabla_Encabezado" class="table-dark">
+                                    </thead>
+                                    <tbody id="seccionPresupuestar_Detalles_Table_ElementosSeleccionados" class="table-group-divider">
+                                    </tbody>
+                                    <tfoot id="seccionPresupuestar_Detalles_Tabla_Pie">
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div id="seccionPresupuestar_Detalles_Datos" class="container-fluid"></div>
                         </div>
+                    </section>
+                    <section id="seccionPresupuestar_Formulario" class="container-fluid">
                     </section>
                 </div>
                 <!-- IMAGEN SEPARADORA -->
@@ -159,11 +171,6 @@
                 <!-- CONTACTO --> 
                 <div id="seccionContacto" class="h-auto col-12 bg-dark d-flex flex-column justify-content-center align-items-center text-light">       
                     <p class="display-6 fw-bold justify-content-center align-items-center" data-aos-anchor-placement="bottom-bottom" data-aos-easing="linear" data-aos-duration="800">CONTACTO</p>
-                    <!-- UBICACION -->
-                    <section id="contactoUbicacion" class="col-12 d-flex flex-column justify-content-center align-items-center">
-                        <!--<iframe class="col-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26240.40213519399!2d-58.29094776889522!3d-34.70391206659588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a331fdc70bdd5d%3A0x6c702cf3f15dabac!2sBernal%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1679515211401!5m2!1ses!2sar" 
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                    </section>
                     <!-- INFORMACION DE CONTACTO -->
                     <div class="col-12 d-flex flex-row justify-content-around align-items-center">
                         <section id="contactoInformacion" class="col-6">
@@ -213,8 +220,10 @@
         </main>
     <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- SCRIPT SWEETALERT2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SCRIPT JAVASCRIPT -->
-    <script type="module" src="./javascript/scripts.js"></script>
+    <script type="module" src="./javascript/scriptIndex.js"></script>
     <!-- SCRIPT ANIMACION AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </body>

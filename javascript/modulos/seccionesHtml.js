@@ -1,14 +1,16 @@
 //=======================================================================
 //                             IMPORTACIONES
 //=======================================================================
-// MODULOS IMPORTADOS
+
+/// MODULOS IMPORTADOS
 import { modulos } from "./modulos.js";
 
 //=======================================================================
 //                                HTML
 //=======================================================================
-// [SECCION MODULOS]
-// ARMADO DE LISTA MODULOS EN HTML
+
+/// [INDEX SECCION MODULOS]
+/// ARMADO DE LISTA MODULOS EN HTML
 /// Se encargar de ingresar en el DOM la lista de modulos disponibles para armar la vivienda
 function seccionHtmlModulos () {
     const listaModuloshtml = document.querySelector("#listaElementosModulos");
@@ -23,17 +25,26 @@ function seccionHtmlModulos () {
                 <p class="fw-bold fs-6">${modulo.nombre}</p>
                 <p class="fs-6">${modulo.descripcion}</p>
             </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id=${modulo.id}>
-                <label class="form-check-label" for=${modulo.id}>Encargar</label>
+            <div>
+            <button type="button" class="btn btn-outline-light" id="botonEncargar-${modulo.id}">Encargar</button>
             </div>
         </div>
         </li>`;});
+}
+
+/// [PRESUPUESTO]
+/// FUNCION ABRIR PESTAÑA PRESUPUESTO
+/// Se encargar de ingresar en el DOM la lista de modulos seleccionados para presupuestar la vivienda
+function abrirHtmlPresupuesto () {
+    window.open(
+        "../../pages/presupuesto.html",
+        "presupuesto"
+      );
 }
 
 //=======================================================================
 //                             EXPORTACIONES
 //=======================================================================
 
-// FUNCIONES EXPORTADAS
-export { seccionHtmlModulos };
+/// FUNCIONES EXPORTADAS
+export { seccionHtmlModulos, abrirHtmlPresupuesto};

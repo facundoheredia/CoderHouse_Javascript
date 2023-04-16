@@ -1,6 +1,6 @@
 body {
-    //------- MODULO HEADER -------//
-    //@import "../headers/header";
-    //------- MODULO MAIN -------//
+    //------- MODULO MAIN INDEX -------//
     @import "../mains/mainIndex";
+    //------- MODULO MAIN PRESUPUESTO -------//
+    @import "../mains/mainPresupuesto";
 }
